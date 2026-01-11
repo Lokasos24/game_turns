@@ -1,5 +1,6 @@
 import { draw } from "../components/drawCanvas.js"
 import { principalCharcters } from "./characters/characters.js"
+import { mapLvl1 } from "../components/maps/map1.js"
 
 const playerState = {
     characters: principalCharcters,
@@ -8,7 +9,7 @@ const playerState = {
 
 const gameState = {
     mode: "PREP",
-    currentLevel: null,
+    currentLevel: mapLvl1,
     playerState,
 }
 
