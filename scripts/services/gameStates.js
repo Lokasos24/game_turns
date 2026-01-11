@@ -1,16 +1,15 @@
 import { draw } from "../components/drawCanvas.js"
+import { principalCharcters } from "./characters/characters.js"
+
+const playerState = {
+    characters: principalCharcters,
+    weapons: []
+}
 
 const gameState = {
-    characters: [{
-        name: "Lokasos",
-        class: "Picaro",
-        gender: "M",
-        weapons: [],
-        level: 1,
-        drawX: 3,
-        drawY: 3,
-    }],
-    weapons: []
+    mode: "PREP",
+    currentLevel: null,
+    playerState,
 }
 
 export function stateGame(){
