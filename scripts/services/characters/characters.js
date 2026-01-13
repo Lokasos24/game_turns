@@ -7,7 +7,7 @@ export async function characters(){
     return data
 }
 
-export async function dataCharacters(allUnits){
+export async function dataCharacters(){
     const units = await characters()
 
     return units.map(data => {

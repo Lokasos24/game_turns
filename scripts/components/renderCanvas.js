@@ -12,7 +12,6 @@ export function renderCanvas(gameState){
     canvas.width = canvasWidth
     canvas.height = canvasHeight
     ctx.fillRect(0,0, canvasWidth, canvasHeight)
-    console.log(gameState)
 
     const level = gameState.currentLevel
 

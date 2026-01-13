@@ -1,6 +1,7 @@
 import { renderCanvas } from "../components/renderCanvas.js"
-import { mapLvl1 } from "../components/maps/map1.js"
 import { dataCharacters } from "./characters/characters.js"
+import { principalCharacters } from "./characters/principalCharacters.js"
+import { changeScenes } from "./changeScenes/changeScene.js"
 
 const playerState = {
     characters: [],
@@ -9,17 +10,17 @@ const playerState = {
     gold: 0
 }
 
-const units = []
-
 const gameState = {
-    mode: "PREP",
-    currentLevel: mapLvl1,
+    mode: undefined,
+    history: undefined,
+    currentLevel: undefined,
     playerState,
 }
 
 export async function stateGame(){
-    const principalCharacters = await dataCharacters(units)
-    console.log(principalCharacters)
-    console.log(units)
+    const dataFromCharacters = await dataCharacters()
+    principalCharacters(dataFromCharacters, playerState)
+
+    await changeScenes(gameState)
     renderCanvas(gameState)
 }
