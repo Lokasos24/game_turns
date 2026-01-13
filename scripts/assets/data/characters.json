@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Sothe",
+        "kind": "Tief",
+        "gender": "M",
+        "weapons": [],
+        "level": 1
+    },
+    {
+        "id": 2,
+        "name": "Selia", 
+        "kind": "Priestess",
+        "gender": "F",
+        "weapons": [],
+        "level": 1
+    }
+]

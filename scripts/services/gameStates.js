@@ -1,11 +1,15 @@
-import { draw } from "../components/drawCanvas.js"
-import { principalCharcters } from "./characters/characters.js"
+import { renderCanvas } from "../components/renderCanvas.js"
 import { mapLvl1 } from "../components/maps/map1.js"
+import { dataCharacters } from "./characters/characters.js"
 
 const playerState = {
-    characters: principalCharcters,
-    weapons: []
+    characters: [],
+    weapons: [],
+    items: [],
+    gold: 0
 }
+
+const units = []
 
 const gameState = {
     mode: "PREP",
@@ -13,6 +17,9 @@ const gameState = {
     playerState,
 }
 
-export function stateGame(){
-    draw(gameState)
+export async function stateGame(){
+    const principalCharacters = await dataCharacters(units)
+    console.log(principalCharacters)
+    console.log(units)
+    renderCanvas(gameState)
 }

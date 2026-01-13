@@ -1,18 +1,15 @@
-const TILE_DEFS = {
-    0: {color: '#144A1E'},
-    1: {color: 'brown'},
-    2: {color: 'red'}
-}
+export function drawCharacters(map, characters, ctx, TILE_SIZE){
+    const drawUnits = {
+        3: {color: 'blue'}
+    }
 
-export function drawMap(map, ctx, TILE_SIZE){
     map.forEach((rows, y) => {
         rows.forEach((value, x) => {
-            const tiles = TILE_DEFS[value]
-            
+            const tiles = drawUnits[value]
             if(!tiles) return
 
             ctx.fillStyle = tiles.color
             ctx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE)
         })
-    });
+    })
 }

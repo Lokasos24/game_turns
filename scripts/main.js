@@ -8,7 +8,7 @@ function renderChanges(){
     stateGame()
 }
 
-function main(){
+async function main(){
     keyWords()
     renderChanges()
     // requestAnimationFrame(main)

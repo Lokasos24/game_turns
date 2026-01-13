@@ -1,19 +1,23 @@
-export const principalCharcters = [
-    {
-        name: "Sothe",
-        class: "Tief",
-        gender: "M",
-        weapons: [],
-        level: 1,
-        drawX: 3,
-        drawY: 3,
-    },{
-        name: "Selia",
-        class: "Priestess",
-        gender: "F",
-        weapons: [],
-        level: 1,
-        drawX: 4,
-        drawY: 3,
-    }
-]
+import dataFetchs from "../dataFetching/fetch.js"
+import { FactoryUnits } from "./createCharacters.js"
+
+export async function characters(){
+    const url = "scripts/assets/data/characters.json"
+    const data = await dataFetchs(url)
+    return data
+}
+
+export async function dataCharacters(allUnits){
+    const units = await characters()
+
+    return units.map(data => {
+        return new FactoryUnits(
+            data.id,
+            data.name,
+            data.kind,
+            data.gender,
+            data.weapons,
+            data.level
+        )
+    })
+}
