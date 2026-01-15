@@ -1,15 +1,15 @@
 const TILE_DEFS = {
-    0: {color: '#144A1E'},
-    1: {color: 'brown'},
-    2: {color: 'red'}
+    0: { color: '#144A1E' },
+    1: { color: 'brown' },
+    2: { color: 'red' }
 }
 
-export function drawMap(map, ctx, TILE_SIZE){
+export function drawCombatMap(map, ctx, TILE_SIZE) {
     map.forEach((rows, y) => {
         rows.forEach((value, x) => {
             const tiles = TILE_DEFS[value]
-            
-            if(!tiles) return
+
+            if (!tiles) return
 
             ctx.fillStyle = tiles.color
             ctx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE)

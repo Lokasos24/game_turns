@@ -1,14 +1,14 @@
 import { stateGame } from "./services/gameStates.js"
 
-function keyWords(){
+function keyWords() {
 
 }
 
-function renderChanges(){
+function renderChanges() {
     stateGame()
 }
 
-async function main(){
+async function main() {
     keyWords()
     renderChanges()
     // requestAnimationFrame(main)

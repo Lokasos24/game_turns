@@ -2,13 +2,53 @@
     "id": 1,
     "title": "El empezar de una aventura",
     "presentations": "En esta historia va a empezar una historia de 2 personas llamadas Sothe y Selia, estas estan destinadas a salvar su mundo",
+    "map": [
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [2,2,2,2,2,2,0,0,0,0,0,0,0,0,1,1,1,1,1,1],
+        [2,2,2,2,2,2,0,0,0,0,0,0,0,0,1,1,1,1,1,1],
+        [2,2,2,2,2,2,0,0,0,0,0,0,0,0,1,1,1,1,1,1],
+        [2,2,2,2,2,2,0,0,0,0,0,0,0,0,1,1,1,1,1,1],
+        [2,2,2,2,2,2,0,0,0,0,0,0,0,0,1,1,1,1,1,1],
+        [2,2,2,2,2,2,0,0,0,0,0,0,0,0,1,1,1,1,1,1],
+        [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
+        [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
+        [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+    ],
     "dialogs": [
-        {"speakerId": 1, "text": "Ya estamos aqui Selia, no olvides que por algo somos aventureros"},
-        {"speakerId": 2, "text": "Pero no podemos hacer algo bueno en nuestras vidas?, es decir, llevamos vidas de bandidos, no nos alejamos a ellos en estos momentos, no podemos llamarnos aventureros"},
-        {"speakerId": 1, "text": "Nadie nos apoyo cuando estabamos so..."},
-        {"speakerId": "extra", "text": "AUXILIO!!! SE ESTAN LLEVANDO A MI HIJO UNOS BANDIDOS POR FAVOR, AUXILIO!!!"},
-        {"speakerId": 1, "text": "Vayamos a ver"},
-        {"speakerId": 2, "text": "No se si sea una buena idea"}
+        {
+            "speakerId": 1,
+            "text": "Ya estamos aqui Selia, no olvides que por algo somos aventureros"
+        },
+        {
+            "speakerId": 2,
+            "text": "Pero no podemos hacer algo bueno en nuestras vidas?, es decir, llevamos vidas de bandidos, no nos alejamos a ellos en estos momentos, no podemos llamarnos aventureros"
+        },
+        {
+            "speakerId": 1,
+            "text": "Nadie nos apoyo cuando estabamos so..."
+        },
+        {
+            "speakerId": "extra",
+            "text": "AUXILIO!!! SE ESTAN LLEVANDO A MI HIJO UNOS BANDIDOS POR FAVOR, AUXILIO!!!"
+        },
+        {
+            "speakerId": 1,
+            "text": "Vayamos a ver"
+        },
+        {
+            "speakerId": 2,
+            "text": "No se si sea una buena idea"
+        }
     ],
     "onEnd": "map1"
 }
