@@ -1,4 +1,3 @@
-import { renderCanvas } from "../components/renderCanvas.js"
 import { dataCharacters } from "./characters/characters.js"
 import { principalCharacters } from "./characters/principalCharacters.js"
 import { changeScenes } from "./changeScenes/changeScene.js"
@@ -23,5 +22,5 @@ export async function stateGame() {
     principalCharacters(dataFromCharacters, playerState)
 
     await changeScenes(gameState)
-    renderCanvas(gameState)
+    return gameState
 }

@@ -13,7 +13,7 @@ canvas.width = canvasWidth
 canvas.height = canvasHeight
 
 export function renderCanvas(gameState) {
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight)
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight)
 
     const history = gameState.history
     const mode = gameState.mode
