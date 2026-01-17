@@ -28,8 +28,8 @@ export function renderCanvas(gameState) {
     if (!level) return
 
     const map = gameState.currentLevel.map
-    const characters = gameState.playerState.characters
+    const characters = gameState.characters
     drawCombatMap(map, ctx, TILE_SIZE)
 
-    drawCharacters(map, characters, ctx, TILE_SIZE)
+    drawCharacters(map, ctx, TILE_SIZE)
 }

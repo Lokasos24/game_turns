@@ -1,12 +1,12 @@
-export function drawCharacters(map, characters, ctx, TILE_SIZE){
+export function drawCharacters(map, ctx, TILE_SIZE) {
     const drawUnits = {
-        3: {color: 'blue'}
+        3: { color: 'blue' }
     }
 
     map.forEach((rows, y) => {
         rows.forEach((value, x) => {
             const tiles = drawUnits[value]
-            if(!tiles) return
+            if (!tiles) return
 
             ctx.fillStyle = tiles.color
             ctx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE)

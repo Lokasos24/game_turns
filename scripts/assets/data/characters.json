@@ -5,14 +5,24 @@
         "kind": "Tief",
         "gender": "M",
         "weapons": [],
-        "level": 1
+        "level": 1,
+        "status": {
+            "recruited": true,
+            "role": "main",
+            "playable": true
+        }
     },
     {
         "id": 2,
-        "name": "Selia", 
+        "name": "Selia",
         "kind": "Priestess",
         "gender": "F",
         "weapons": [],
-        "level": 1
+        "level": 1,
+        "status": {
+            "recruited": true,
+            "role": "main",
+            "playable": true
+        }
     }
 ]

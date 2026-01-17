@@ -1,13 +1,13 @@
 import dataFetchs from "../dataFetching/fetch.js"
 import { FactoryUnits } from "./createCharacters.js"
 
-export async function characters(){
+export async function characters() {
     const url = "scripts/assets/data/characters.json"
     const data = await dataFetchs(url)
     return data
 }
 
-export async function dataCharacters(){
+export async function dataCharacters() {
     const units = await characters()
 
     return units.map(data => {
@@ -17,7 +17,8 @@ export async function dataCharacters(){
             data.kind,
             data.gender,
             data.weapons,
-            data.level
+            data.level,
+            data.status
         )
     })
 }
