@@ -1,14 +1,14 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-body{
+body {
     background-color: #222;
     height: 100%;
 }
 
-.container-canvas{
+.container-canvas {
     height: 100dvh;
     width: 100%;
     display: grid;
@@ -16,6 +16,16 @@ body{
     justify-content: center;
 }
 
-.game{
+.game {
     background: #2ca52c;
+}
+
+.dialog-box {
+    width: 640px;
+    height: 95px;
+    border: 1px solid red;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8.4%;
 }

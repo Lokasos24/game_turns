@@ -1,3 +1,5 @@
+import { TILE_SIZE } from "../../consts/globalConsts.js"
+
 const TILE_DEFS = {
     0: { color: 'green' },
     1: { color: 'blue' },
@@ -5,7 +7,7 @@ const TILE_DEFS = {
     3: { color: 'yellow' }
 }
 
-export function drawHistoryMap(map, ctx, TILE_SIZE) {
+export function drawHistoryMap(map, ctx) {
     map.forEach((rows, y) => {
         rows.forEach((value, x) => {
             const tiles = TILE_DEFS[value]
