@@ -15,6 +15,7 @@ const gameState = {
     history: undefined,
     currentLevel: undefined,
     characters: [],
+    currentDialog: 0,
     playerState,
 }
 

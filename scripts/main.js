@@ -14,7 +14,10 @@ async function main() {
     const gameState = await stateGame()
     renderChanges(gameState)
     keyWords(gameState)
-    // requestAnimationFrame(main)
+    // function loop(gameState){
+    //     startGame(gameState)
+    // }
+    // requestAnimationFrame(loop)
 }
 
 main()

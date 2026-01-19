@@ -31,6 +31,7 @@ body {
 }
 
 .dialog-box {
+    display: none;
     width: 640px;
     height: 95px;
     position: absolute;

@@ -1,14 +1,20 @@
 import { changeDialogToBox } from "../components/dialogBox/changeDialog.js"
+import { updateDialogVisibility } from "../components/dialogBox/dialogVisibility.js"
 
-let currentDialog = 0
+let dialogInputVisualizer = false
 
 export function pressEnterToChangeDialog(gameState){
-    if(!['STORY', 'STORY_EVENT', 'RECLUT_EVENT'].includes(gameState.mode)) return
+    updateDialogVisibility(gameState)
+
+    if(dialogInputVisualizer) return
+    dialogInputVisualizer = true
 
     document.addEventListener('keydown', event => {
-        if(event.key === 'Enter'){
-            changeDialogToBox(gameState, currentDialog)
-            currentDialog++
+        if(event.key !== 'Enter') return
+
+        if(['STORY', 'STORY_EVENT', 'RECLUT_EVENT'].includes(gameState.mode)){
+            changeDialogToBox(gameState)
+            gameState.currentDialog++
         }
     })
 }
