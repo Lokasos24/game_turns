@@ -1,8 +1,9 @@
 import { renderCanvas } from "./components/renderCanvas.js"
+import { pressEnterToChangeDialog } from "./dom/changeDialog.js"
 import { stateGame } from "./services/gameStates.js"
 
-function keyWords() {
-
+function keyWords(gameState) {
+    pressEnterToChangeDialog(gameState)
 }
 
 function renderChanges(gameState) {
@@ -11,8 +12,8 @@ function renderChanges(gameState) {
 
 async function main() {
     const gameState = await stateGame()
-    keyWords()
     renderChanges(gameState)
+    keyWords(gameState)
     // requestAnimationFrame(main)
 }
 

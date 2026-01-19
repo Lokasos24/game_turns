@@ -1,4 +1,3 @@
-import { renderDialogText } from "./dialogBox/dialogBox.js"
 import { drawCharacters } from "./drawsInCanvas/drawCharacters.js"
 import { drawCombatMap } from "./drawsInCanvas/drawCombatMap.js"
 import { drawHistoryMap } from "./drawsInCanvas/drawHistoryMap.js"
@@ -19,7 +18,6 @@ export function renderCanvas(gameState) {
     const mode = gameState.mode
     if (mode === "STORY") {
         drawHistoryMap(history.map, ctx)
-        renderDialogText(gameState.history)
     }
 
     if (mode !== "LVL") return
