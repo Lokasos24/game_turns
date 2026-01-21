@@ -1,4 +1,4 @@
-import { TILE_SIZE } from "../../consts/globalConsts.js";
+import { TILE_SIZE } from "../../constants/globalConsts.js";
 
 const TILE_DEFS = {
     0: { color: '#144A1E' },
@@ -6,7 +6,7 @@ const TILE_DEFS = {
     2: { color: 'red' }
 }
 
-export function drawCombatMap(map, ctx) {
+export function drawCombatMap({ map }, ctx) {
     map.forEach((rows, y) => {
         rows.forEach((value, x) => {
             const tiles = TILE_DEFS[value]

@@ -1,4 +1,4 @@
-import { TILE_SIZE } from "../../consts/globalConsts.js"
+import { TILE_SIZE } from "../../constants/globalConsts.js"
 
 const TILE_DEFS = {
     0: { color: 'green' },

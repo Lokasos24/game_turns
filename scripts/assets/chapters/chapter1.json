@@ -47,5 +47,8 @@
             "text": "No se si sea una buena idea"
         }
     ],
-    "onEnd": "mapLvl1"
+    "onEnd": {
+        "mode": "LVL",
+        "map": 0
+    }
 }

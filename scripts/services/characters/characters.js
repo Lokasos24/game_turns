@@ -2,7 +2,7 @@ import dataFetchs from "../dataFetching/fetch.js"
 import { FactoryUnits } from "./createCharacters.js"
 
 export async function characters() {
-    const url = "scripts/assets/data/characters.json"
+    const url = "scripts/assets/gameData/characters.json"
     const data = await dataFetchs(url)
     return data
 }

@@ -1,8 +1,17 @@
 import dataFetchs from "../dataFetching/fetch.js"
+import { historyUrls } from "../../constants/globalConsts.js"
 
-export async function changeScenes(gameState) {
-    const url = "scripts/assets/history/chapter1.json"
+export async function changeScenes(gameState, newGameMode, mapToBeat) {
+    const url = historyUrls[gameState.currentHistory]
     const historyData = await dataFetchs(url)
-    gameState.mode = "STORY"
-    gameState.history = historyData
+
+    const newGameState = {
+        ...gameState,
+        mode: newGameMode || 'STORY',
+        history: historyData,
+        currentLevel: mapToBeat,
+        currentDialog: 0,
+    }
+
+    return newGameState
 }

@@ -1,6 +1,6 @@
-import { TILE_SIZE } from "../../consts/globalConsts.js"
+import { TILE_SIZE } from "../../constants/globalConsts.js"
 
-export function drawCharacters(map, ctx) {
+export function drawCharacters({ map }, ctx) {
     const drawUnits = {
         3: { color: 'blue' }
     }

@@ -1,11 +1,8 @@
 import { changeDialogToBox } from "../components/dialogBox/changeDialog.js"
-import { updateDialogVisibility } from "../components/dialogBox/dialogVisibility.js"
 
 let dialogInputVisualizer = false
 
-export function pressEnterToChangeDialog(gameState){
-    updateDialogVisibility(gameState)
-
+export function setupDialogInput(gameState){
     if(dialogInputVisualizer) return
     dialogInputVisualizer = true
 
