@@ -3,6 +3,7 @@ import { setupDialogInput } from "./inputs/keyboardHandlers.js"
 import { stateGame } from "./services/gameStates.js"
 import { changeScenes } from "./services/changeScenes/changeScene.js"
 import { renderUi } from "./components/renderUI.js"
+import { gameLoop } from "./core/gameLoop.js"
 
 function keyWords(gameState) {
     setupDialogInput(gameState)
@@ -18,10 +19,7 @@ async function main() {
     await changeScenes(gameState)
     renderChanges(gameState)
     keyWords(gameState)
-    // function loop(gameState){
-    //     startGame(gameState)
-    // }
-    // requestAnimationFrame(loop)
+    gameLoop(gameState)
 }
 
 main()

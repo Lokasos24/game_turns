@@ -2,6 +2,8 @@ export const TILE_SIZE = 32
 export const canvasWidth = 320 * 2
 export const canvasHeight = 320 * 2
 
+export const speed = 200
+
 export const historyUrls = [
     "scripts/assets/chapters/chapter1.json",
 ]
