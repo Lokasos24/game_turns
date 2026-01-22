@@ -1,8 +1,8 @@
 import { renderDialogText } from "./dialogBox.js"
 import { onDialogEnd } from "./onDialogEnd.js"
 
-export function changeDialogToBox(gameState){
-    if(gameState.history.dialogs.length <= gameState.currentDialog) {
+export function changeDialog(gameState) {
+    if (gameState.history.dialogs.length <= gameState.currentDialog) {
         onDialogEnd(gameState)
         return
     }

@@ -1,3 +1,5 @@
+import { renderCanvas } from "../components/renderCanvas.js"
+import { renderUi } from "../components/renderUI.js"
 import { dataCharacters } from "./characters/characters.js"
 import { addCharactersToPlayerState, loadCharactersToGameState, getPlayableCharacters } from "./characters/recruitingCharacters.js"
 
@@ -27,4 +29,9 @@ export async function stateGame() {
     addCharactersToPlayerState(playerState, playableCharacters)
 
     return gameState
+}
+
+export function renderApp() {
+    renderCanvas(gameState)
+    renderUi(gameState)
 }

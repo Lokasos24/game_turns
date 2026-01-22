@@ -7,5 +7,5 @@ export async function onDialogEnd(gameState) {
     const currentMapUrl = mapsUrls[gameState.currentGameLevel]
     const newMapToBeat = await dataFetchs(currentMapUrl)
 
-    changeScenes(gameState, newGameMode, newMapToBeat)
+    await changeScenes(gameState, newGameMode, newMapToBeat)
 }

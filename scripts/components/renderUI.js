@@ -1,7 +1,7 @@
-import { updateDialogVisibility } from "./dialogBox/dialogVisibility.js"
+import { updateDialogVisibility } from "./dialog/dialogVisibility.js"
 
 const dialogBox = document.querySelector('#dialogBox')
 
-export function renderUi(gameState){
+export function renderUi(gameState) {
     updateDialogVisibility(gameState, dialogBox)
 }
