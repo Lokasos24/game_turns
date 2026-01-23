@@ -1,6 +1,5 @@
 import { renderCanvas } from "../components/renderCanvas.js"
 import { renderUi } from "../components/renderUI.js"
-import { canvasHeight, canvasWidth } from "../constants/globalConsts.js"
 import { dataCharacters } from "./characters/characters.js"
 import { addCharactersToPlayerState, loadCharactersToGameState, getPlayableCharacters } from "./characters/recruitingCharacters.js"
 
@@ -20,8 +19,8 @@ const gameState = {
     currentDialog: 0,
     currentGameLevel: 0,
     selector: {
-        x: canvasWidth / 2,
-        y: canvasHeight / 2,
+        x: 4,
+        y: 4,
     },
     playerState,
 }

@@ -1,5 +1,5 @@
 import { changeDialog } from "../components/dialog/changeDialog.js"
-import { TILE_SIZE } from "../constants/globalConsts.js"
+import { tryMoveSelector } from "../systems/movement.js"
 
 let dialogInputVisualizer = false
 let moveSelectorInputVisualizer = false
@@ -23,20 +23,10 @@ export function moveSelectorInput(gameState) {
     moveSelectorInputVisualizer = true
 
     document.addEventListener('keydown', event => {
-        if (event.key === 'w') {
-            gameState.selector.y -= 1 * TILE_SIZE
-        }
-
-        if (event.key === 's') {
-            gameState.selector.y += 1 * TILE_SIZE
-        }
-
-        if (event.key === 'd') {
-            gameState.selector.x += 1 * TILE_SIZE
-        }
-
-        if (event.key === 'a') {
-            gameState.selector.x -= 1 * TILE_SIZE
-        }
+        if (gameState.mode !== 'LVL') return
+        if (event.key === 'w') tryMoveSelector(gameState, -1, 0)
+        if (event.key === 's') tryMoveSelector(gameState, 1, 0)
+        if (event.key === 'd') tryMoveSelector(gameState, 0, 1)
+        if (event.key === 'a') tryMoveSelector(gameState, 0, -1)
     })
 }
