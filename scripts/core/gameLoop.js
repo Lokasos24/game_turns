@@ -1,5 +1,4 @@
 import renderApp from "../components/renderApp.js"
-import { update } from "../services/gameStates.js"
 
 export function gameLoop(gameState) {
     if (!gameState.history) return
@@ -16,4 +15,8 @@ export function gameLoop(gameState) {
     }
 
     loop()
+}
+
+function update(gameState, deltaTime) {
+
 }
