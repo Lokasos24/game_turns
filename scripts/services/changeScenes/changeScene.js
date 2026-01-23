@@ -1,6 +1,6 @@
 import dataFetchs from "../dataFetching/fetch.js"
 import { historyUrls } from "../../constants/globalConsts.js"
-import { renderApp } from "../gameStates.js"
+import renderApp from "../../components/renderApp.js"
 
 export async function changeScenes(gameState, newGameMode, mapToBeat) {
     const url = historyUrls[gameState.currentHistory]
@@ -10,13 +10,5 @@ export async function changeScenes(gameState, newGameMode, mapToBeat) {
     gameState.history = historyData
     gameState.currentLevel = mapToBeat
     gameState.currentDialog = 0
-    renderApp()
-
-    // return {
-    //     ...gameState,
-    //     mode: newGameMode || 'STORY',
-    //     history: historyData,
-    //     currentLevel: mapToBeat,
-    //     currentDialog: 0,
-    // }
+    renderApp(gameState)
 }

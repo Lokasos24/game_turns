@@ -1,12 +1,12 @@
 import { changeDialog } from "../components/dialog/changeDialog.js"
 import { tryMoveSelector } from "../systems/movement.js"
 
-let dialogInputVisualizer = false
-let moveSelectorInputVisualizer = false
+let isDialogInputSetup = false
+let isMoveInputSetup = false
 
 export function setupDialogInput(gameState) {
-    if (dialogInputVisualizer) return
-    dialogInputVisualizer = true
+    if (isDialogInputSetup) return
+    isDialogInputSetup = true
 
     document.addEventListener('keydown', event => {
         if (event.key !== 'Enter') return
@@ -19,8 +19,8 @@ export function setupDialogInput(gameState) {
 }
 
 export function moveSelectorInput(gameState) {
-    if (moveSelectorInputVisualizer) return
-    moveSelectorInputVisualizer = true
+    if (isMoveInputSetup) return
+    isMoveInputSetup = true
 
     document.addEventListener('keydown', event => {
         if (gameState.mode !== 'LVL') return

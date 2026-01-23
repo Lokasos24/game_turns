@@ -1,4 +1,4 @@
-import { renderApp } from "../services/gameStates.js"
+import renderApp from "../components/renderApp.js"
 import { update } from "../services/gameStates.js"
 
 export function gameLoop(gameState) {
@@ -11,7 +11,7 @@ export function gameLoop(gameState) {
         lastTime = timeStamp
 
         update(gameState, deltaTime)
-        renderApp()
+        renderApp(gameState)
         requestAnimationFrame(loop)
     }
 

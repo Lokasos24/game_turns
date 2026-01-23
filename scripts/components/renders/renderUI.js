@@ -1,4 +1,4 @@
-import { updateDialogVisibility } from "./dialog/dialogVisibility.js"
+import { updateDialogVisibility } from "../dialog/dialogVisibility.js"
 
 const dialogBox = document.querySelector('#dialogBox')
 
