@@ -17,6 +17,5 @@ export async function changeScenes(gameState, newGameMode, mapToBeat) {
     gameState.currentLevel = mapToBeat
     gameState.currentDialog = 0
     initCharactersPositions(gameState)
-    console.log(gameState)
     renderApp(gameState)
 }

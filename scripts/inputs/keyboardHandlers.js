@@ -1,6 +1,7 @@
 import { changeDialog } from "../components/dialog/changeDialog.js"
 import { changeTileName } from "../components/showNamesTiles/onMapTile.js"
 import { tryMoveSelector } from "../systems/movement.js"
+import { selectCharacter } from "../systems/selectCharacter.js"
 
 const keys = {
     'w': true,
@@ -25,11 +26,7 @@ export function setupDialogInput(gameState) {
         }
 
         if (['LVL'].includes(gameState.mode)) {
-            const { selector } = gameState
-            gameState.characterSelected = gameState.playerState.characters.find(character => {
-                return character.drawX === selector.x && character.drawY === selector.y && character.status.recruited
-            })
-            console.log(gameState.characterSelected)
+            selectCharacter(gameState)
         }
     })
 }
