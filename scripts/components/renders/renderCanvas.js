@@ -10,7 +10,7 @@ const ctx = canvas.getContext('2d')
 canvas.width = canvasWidth
 canvas.height = canvasHeight
 
-export function renderCanvas({ history, mode, currentLevel, selector }) {
+export function renderCanvas({ history, mode, currentLevel, selector, playerState }) {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight)
 
     if (mode === "STORY") {
@@ -19,7 +19,7 @@ export function renderCanvas({ history, mode, currentLevel, selector }) {
 
     if (currentLevel && mode === "LVL") {
         drawCombatMap(currentLevel, ctx)
-        drawCharacters(currentLevel, ctx)
+        drawCharacters(playerState, ctx)
         drawSelector(selector, ctx)
     }
 }

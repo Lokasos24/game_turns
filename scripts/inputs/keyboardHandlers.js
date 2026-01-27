@@ -2,14 +2,15 @@ import { changeDialog } from "../components/dialog/changeDialog.js"
 import { changeTileName } from "../components/showNamesTiles/onMapTile.js"
 import { tryMoveSelector } from "../systems/movement.js"
 
-let isDialogInputSetup = false
-let isMoveInputSetup = false
 const keys = {
     'w': true,
     'a': true,
     's': true,
     'd': true
 }
+let isDialogInputSetup = false
+let isMoveInputSetup = false
+
 
 export function setupDialogInput(gameState) {
     if (isDialogInputSetup) return
@@ -21,6 +22,14 @@ export function setupDialogInput(gameState) {
         if (['STORY', 'STORY_EVENT', 'RECLUT_EVENT'].includes(gameState.mode)) {
             changeDialog(gameState)
             gameState.currentDialog++
+        }
+
+        if (['LVL'].includes(gameState.mode)) {
+            const { selector } = gameState
+            gameState.characterSelected = gameState.playerState.characters.find(character => {
+                return character.drawX === selector.x && character.drawY === selector.y && character.status.recruited
+            })
+            console.log(gameState.characterSelected)
         }
     })
 }
