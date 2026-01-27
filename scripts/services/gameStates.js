@@ -17,9 +17,10 @@ const gameState = {
     currentDialog: 0,
     currentGameLevel: 0,
     selector: {
-        x: 4,
-        y: 4,
+        x: 9,
+        y: 9,
     },
+    characterSelected: undefined,
     playerState,
 }
 
@@ -31,8 +32,4 @@ export async function stateGame() {
     addCharactersToPlayerState(playerState, playableCharacters)
 
     return gameState
-}
-
-export function update(gameState, deltaTime) {
-
 }

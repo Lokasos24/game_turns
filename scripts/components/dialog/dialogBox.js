@@ -1,6 +1,8 @@
+import { boxDialog } from "../../constants/htmlConsts.js"
+
 export function renderDialogText(currentDialog) {
-    dialogBox.replaceChildren()
-    const dialogText = dialogBox.appendChild(document.createElement('p'))
+    boxDialog.replaceChildren()
+    const dialogText = boxDialog.appendChild(document.createElement('p'))
 
     dialogText.textContent = currentDialog
 

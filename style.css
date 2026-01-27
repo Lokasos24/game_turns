@@ -18,6 +18,22 @@ body {
     height: 100%;
 }
 
+.stats{
+    align-content: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    width: 100px;
+    height: 40px;
+    background: rgb(32, 21, 21);
+}
+
+.stats>span{
+    justify-self: center;
+}
+
 .container-canvas {
     height: 100dvh;
     width: 100%;

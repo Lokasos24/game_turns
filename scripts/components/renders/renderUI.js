@@ -1,7 +1,7 @@
 import { updateDialogVisibility } from "../dialog/dialogVisibility.js"
-
-const dialogBox = document.querySelector('#dialogBox')
+import { updateTilesVisibility } from "../showNamesTiles/updateTilesVisibility.js";
 
 export function renderUi(gameState) {
-    updateDialogVisibility(gameState, dialogBox)
+    updateDialogVisibility(gameState)
+    updateTilesVisibility(gameState)
 }
