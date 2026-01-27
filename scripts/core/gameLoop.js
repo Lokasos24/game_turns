@@ -1,4 +1,4 @@
-import renderApp from "../components/renderApp.js"
+import { renderCanvas } from "../components/renders/renderCanvas.js"
 
 export function gameLoop(gameState) {
     if (!gameState.history) return
@@ -10,7 +10,7 @@ export function gameLoop(gameState) {
         lastTime = timeStamp
 
         update(gameState, deltaTime)
-        renderApp(gameState)
+        renderCanvas(gameState)
         requestAnimationFrame(loop)
     }
 

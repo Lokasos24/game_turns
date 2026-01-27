@@ -1,13 +1,12 @@
-import { TILE_SIZE } from "../../constants/globalConsts.js"
+import { TILE_SIZE, TILE_DEFS } from "../../constants/globalConsts.js"
 
 export function drawCharacters({ map }, ctx) {
-    const drawUnits = {
-        3: { color: 'blue' }
-    }
-
     map.forEach((rows, y) => {
         rows.forEach((value, x) => {
-            const tiles = drawUnits[value]
+            if (value !== 3) return
+
+            const tiles = TILE_DEFS[value]
+
             if (!tiles) return
 
             ctx.fillStyle = tiles.color

@@ -4,6 +4,7 @@ export const TILE_DEFS = {
     1: { type: 'wall', color: 'brown' },
     2: { type: 'enemies', color: 'red' }
 }
+
 export const canvasWidth = 320 * 2
 export const canvasHeight = 320 * 2
 

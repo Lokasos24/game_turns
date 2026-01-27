@@ -1,4 +1,5 @@
 import { verifyNextTile } from "../utils/helpers.js"
+
 export function tryMoveSelector(gameState, yPosition, xPosition) {
     const nextY = gameState.selector.y + yPosition
     const nextX = gameState.selector.x + xPosition
