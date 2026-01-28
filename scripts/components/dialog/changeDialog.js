@@ -9,4 +9,5 @@ export function changeDialog(gameState) {
     const dialogIndex = gameState.currentDialog
     const currentDialog = gameState.history.dialogs[dialogIndex].text
     renderDialogText(currentDialog)
+    gameState.currentDialog++
 }

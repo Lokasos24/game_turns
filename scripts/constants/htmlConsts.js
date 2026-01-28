@@ -1,2 +1,2 @@
-export const statsDom = document.querySelector('#stats')
+export const chapterTitleDom = document.querySelector('#chapterTitle')
 export const boxDialog = document.querySelector('#dialogBox')

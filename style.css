@@ -18,19 +18,20 @@ body {
     height: 100%;
 }
 
-.stats{
+.chapter-title{
     align-content: center;
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    width: 100px;
+    width: 200px;
     height: 40px;
     background: rgb(32, 21, 21);
+    font-family: "Cinzel", serif;
 }
 
-.stats>span{
+.chapter-title>span{
     justify-self: center;
 }
 

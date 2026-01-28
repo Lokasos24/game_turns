@@ -1,17 +1,9 @@
-import { changeDialog } from "../components/dialog/changeDialog.js"
-import { changeTileName } from "../components/showNamesTiles/onMapTile.js"
 import { tryMoveSelector } from "../systems/movement.js"
-import { selectCharacter } from "../systems/selectCharacter.js"
+import { eventBus } from "../utils/eventBus.js"
 
-const keys = {
-    'w': true,
-    'a': true,
-    's': true,
-    'd': true
-}
+const movementKeys = ['w', 'a', 's', 'd']
 let isDialogInputSetup = false
 let isMoveInputSetup = false
-
 
 export function setupDialogInput(gameState) {
     if (isDialogInputSetup) return
@@ -21,13 +13,12 @@ export function setupDialogInput(gameState) {
         if (event.key !== 'Enter') return
 
         if (['STORY', 'STORY_EVENT', 'RECLUT_EVENT'].includes(gameState.mode)) {
-            changeDialog(gameState)
-            gameState.currentDialog++
+            eventBus.emit('change:dialog', gameState)
         }
 
-        if (['LVL'].includes(gameState.mode)) {
-            selectCharacter(gameState)
-        }
+        // if (['LVL'].includes(gameState.mode)) {
+        //     eventBus.emit('select:character', gameState)
+        // }
     })
 }
 
@@ -41,6 +32,6 @@ export function moveSelectorInput(gameState) {
         if (event.key === 's') tryMoveSelector(gameState, 1, 0)
         if (event.key === 'd') tryMoveSelector(gameState, 0, 1)
         if (event.key === 'a') tryMoveSelector(gameState, 0, -1)
-        if (keys[event.key]) changeTileName(gameState)
+        if (movementKeys.includes(event.key)) eventBus.emit('move:selector', gameState)
     })
 }
