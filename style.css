@@ -18,20 +18,39 @@ body {
     height: 100%;
 }
 
-.chapter-title{
+.left-panel{
+    position: absolute;
+    display: grid;
+    width: auto;
+    left: 30px;
+    top: 30%;
+    background: rgb(32, 21, 21);
+}
+
+.header-stats-panel{
+    display: grid;
+    color: white;
+}
+
+.body-stats-panel{
+    display: grid;
+    color: white;
+}
+
+.chapter-title {
     align-content: center;
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    width: 200px;
+    width: auto;
     height: 40px;
     background: rgb(32, 21, 21);
     font-family: "Cinzel", serif;
 }
 
-.chapter-title>span{
+.chapter-title>span {
     justify-self: center;
 }
 
@@ -58,6 +77,6 @@ body {
     background-color: rgb(26, 179, 206);
 }
 
-.dialog-box>p{
+.dialog-box>p {
     font-family: "Merriweather", serif;
 }

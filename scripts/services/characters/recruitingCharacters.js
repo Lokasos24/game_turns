@@ -7,5 +7,5 @@ export function getPlayableCharacters(stateGame) {
 }
 
 export function addCharactersToPlayerState(playerState, charactersRecruited) {
-    playerState.characters.push(...charactersRecruited)
+    playerState.units.push(...charactersRecruited)
 }

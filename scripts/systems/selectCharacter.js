@@ -1,7 +1,7 @@
 export function selectCharacter(gameState) {
     const { selector } = gameState
-    const characterClicked = gameState.playerState.characters.find(character => {
-        return (character.drawX === selector.x && character.drawY === selector.y && character.status.recruited)
+    const characterClicked = gameState.playerState.units.find(unit => {
+        return (unit.drawX === selector.x && unit.drawY === selector.y && unit.status.recruited)
     })
     gameState.characterSelected = characterClicked?.id || null
 }

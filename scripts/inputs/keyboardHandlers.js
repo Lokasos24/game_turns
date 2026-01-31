@@ -16,9 +16,9 @@ export function setupDialogInput(gameState) {
             eventBus.emit('change:dialog', gameState)
         }
 
-        // if (['LVL'].includes(gameState.mode)) {
-        //     eventBus.emit('select:character', gameState)
-        // }
+        if (['LVL'].includes(gameState.mode)) {
+            eventBus.emit('select:character', gameState)
+        }
     })
 }
 

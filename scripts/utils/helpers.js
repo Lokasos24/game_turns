@@ -7,3 +7,10 @@ export function verifyNextTile({ map }, nextPositionY, nextPositionX) {
 
     return true
 }
+
+export function captureUnitStats({ selector, playerState }) {
+    const { units } = playerState
+    const { x, y } = selector
+
+    return units.find(unit => unit.drawX === x && unit.drawY === y)
+}

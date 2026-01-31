@@ -5,7 +5,7 @@ export function initCharactersPositions(gameState) {
     const currentLevel = gameState.currentLevel
 
     currentLevel.initPlayerPositions.forEach(({ x, y }, i) => {
-        playerState.characters[i].drawX = x
-        playerState.characters[i].drawY = y
+        playerState.units[i].drawX = x
+        playerState.units[i].drawY = y
     });
 }

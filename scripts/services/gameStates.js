@@ -2,7 +2,7 @@ import { dataCharacters } from "./characters/characters.js"
 import { addCharactersToPlayerState, loadCharactersToGameState, getPlayableCharacters } from "./characters/recruitingCharacters.js"
 
 const playerState = {
-    characters: [],
+    units: [],
     weapons: [],
     items: [],
     gold: 0
@@ -12,7 +12,7 @@ const gameState = {
     mode: undefined,
     history: undefined,
     currentLevel: undefined,
-    characters: [],
+    units: [],
     currentHistory: 0,
     currentDialog: 0,
     currentGameLevel: 0,
@@ -26,9 +26,9 @@ const gameState = {
 
 export async function stateGame() {
     const dataFromCharacters = await dataCharacters()
-    loadCharactersToGameState(dataFromCharacters, gameState.characters)
+    loadCharactersToGameState(dataFromCharacters, gameState.units)
 
-    const playableCharacters = await getPlayableCharacters(gameState.characters)
+    const playableCharacters = await getPlayableCharacters(gameState.units)
     addCharactersToPlayerState(playerState, playableCharacters)
 
     return gameState

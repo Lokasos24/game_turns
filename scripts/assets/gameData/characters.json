@@ -6,6 +6,16 @@
         "gender": "M",
         "weapons": [],
         "level": 1,
+        "stats": {
+            "hp": 16,
+            "str": 5,
+            "mag": 0,
+            "skl": 5,
+            "spd": 8,
+            "lck": 5,
+            "def": 5,
+            "mov": 7
+        },
         "status": {
             "recruited": true,
             "role": "main",
@@ -19,6 +29,16 @@
         "gender": "F",
         "weapons": [],
         "level": 1,
+        "stats": {
+            "hp": 14,
+            "str": 5,
+            "mag": 0,
+            "skl": 5,
+            "spd": 5,
+            "lck": 5,
+            "def": 5,
+            "mov": 5
+        },
         "status": {
             "recruited": true,
             "role": "main",
