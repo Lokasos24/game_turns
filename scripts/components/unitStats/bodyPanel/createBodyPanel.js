@@ -9,6 +9,7 @@ export function createBodyPanel(gameState, bodyPanel){
 
     Object.entries(changes.stats).forEach(([key, value]) => {
         const createChildValues = bodyPanel.appendChild(document.createElement('span'))
+        if(key === 'mov') return
         createChildValues.className = `unit-stats`
         createChildValues.textContent = `${key}: ${value}`
     })

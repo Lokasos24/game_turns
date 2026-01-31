@@ -1,15 +1,14 @@
 [
     {
         "id": 1,
-        "name": "Sothe",
-        "kind": "Tief",
+        "name": "Kaelen",
+        "kind": "General",
         "gender": "M",
         "weapons": [],
         "level": 1,
         "stats": {
             "hp": 16,
             "str": 5,
-            "mag": 0,
             "skl": 5,
             "spd": 8,
             "lck": 5,
@@ -24,7 +23,7 @@
     },
     {
         "id": 2,
-        "name": "Selia",
+        "name": "Valerius",
         "kind": "Priestess",
         "gender": "F",
         "weapons": [],
@@ -32,7 +31,72 @@
         "stats": {
             "hp": 14,
             "str": 5,
-            "mag": 0,
+            "skl": 5,
+            "spd": 5,
+            "lck": 5,
+            "def": 5,
+            "mov": 5
+        },
+        "status": {
+            "recruited": true,
+            "role": "main",
+            "playable": true
+        }
+    },
+    {
+        "id": 3,
+        "name": "Nyra",
+        "kind": "Archer",
+        "gender": "F",
+        "weapons": [],
+        "level": 1,
+        "stats": {
+            "hp": 14,
+            "str": 5,
+            "skl": 5,
+            "spd": 5,
+            "lck": 5,
+            "def": 5,
+            "mov": 5
+        },
+        "status": {
+            "recruited": true,
+            "role": "main",
+            "playable": true
+        }
+    },
+    {
+        "id": 4,
+        "name": "Joren",
+        "kind": "Tief",
+        "gender": "F",
+        "weapons": [],
+        "level": 1,
+        "stats": {
+            "hp": 14,
+            "str": 5,
+            "skl": 5,
+            "spd": 5,
+            "lck": 5,
+            "def": 5,
+            "mov": 5
+        },
+        "status": {
+            "recruited": true,
+            "role": "main",
+            "playable": true
+        }
+    },
+    {
+        "id": 5,
+        "name": "Elara",
+        "kind": "Medic",
+        "gender": "F",
+        "weapons": [],
+        "level": 1,
+        "stats": {
+            "hp": 14,
+            "str": 5,
             "skl": 5,
             "spd": 5,
             "lck": 5,

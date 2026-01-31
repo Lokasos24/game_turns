@@ -4,6 +4,16 @@ export const TILE_DEFS = {
     1: { type: 'wall', color: 'brown' }
 }
 
+export const CONFIG_LIMITS = {
+    "lvl": 20,
+    "hp": 100,
+    "str": 40,
+    "skl": 40,
+    "spd": 40,
+    "lck": 40,
+    "def": 40,
+}
+
 export const canvasWidth = 320 * 2
 export const canvasHeight = 320 * 2
 
