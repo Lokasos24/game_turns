@@ -16,7 +16,7 @@ export async function dataCharacters() {
             data.name,
             data.kind,
             data.gender,
-            data.weapons,
+            data.inventory,
             data.level,
             data.stats,
             data.status
