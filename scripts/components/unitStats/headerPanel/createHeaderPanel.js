@@ -5,7 +5,7 @@ export function createHeaderPanel(gameState, headerPanel) {
 
     const changes = captureUnitStats(gameState)
 
-    if(!changes) return
+    if (!changes) return
 
     const createSpanName = headerPanel.appendChild(document.createElement('span'))
     createSpanName.className = `unit-name`
@@ -13,5 +13,9 @@ export function createHeaderPanel(gameState, headerPanel) {
 
     const createLevelUnit = headerPanel.appendChild(document.createElement('span'))
     createLevelUnit.className = `unit-level`
-    createLevelUnit.textContent = `${changes.level}`
+    createLevelUnit.textContent = `Lv. ${changes.level}`
+
+    const createClassUnit = headerPanel.appendChild(document.createElement('span'))
+    createClassUnit.className = `unit-class`
+    createClassUnit.textContent = `${changes.class || changes.kind}`
 }

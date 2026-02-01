@@ -1,4 +1,5 @@
-import { drawCharacters } from "../rendererCanvas/drawCharacters.js"
+import { drawPlayerUnits } from "../rendererCanvas/drawUnitsRecruited.js"
+import { drawEnemiesUnits } from "../rendererCanvas/drawEnemies.js"
 import { drawCombatMap } from "../rendererCanvas/drawCombatMap.js"
 import { drawHistoryMap } from "../rendererCanvas/drawHistoryMap.js"
 import { canvasHeight, canvasWidth } from "../../constants/globalConsts.js"
@@ -19,7 +20,8 @@ export function renderCanvas({ history, mode, currentLevel, selector, playerStat
 
     if (currentLevel && mode === "LVL") {
         drawCombatMap(currentLevel, ctx)
-        drawCharacters(playerState, ctx)
+        drawPlayerUnits(playerState, ctx)
+        drawEnemiesUnits(currentLevel, ctx)
         drawSelector(selector, ctx)
     }
 }
