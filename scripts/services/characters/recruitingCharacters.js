@@ -1,9 +1,6 @@
-export function loadCharactersToGameState(charactersData, playerState) {
-    playerState.push(...charactersData)
-}
-
-export function getPlayableCharacters(stateGame) {
-    return stateGame.filter(character => character.status.recruited)
+export function getPlayableCharacters(charactersArray) {
+    return (Array.isArray(charactersArray) ? charactersArray : [])
+        .filter(character => !!(character && character.status && character.status.recruited))
 }
 
 export function addCharactersToPlayerState(playerState, charactersRecruited) {

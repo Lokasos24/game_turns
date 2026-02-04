@@ -1,5 +1,5 @@
 import { dataCharacters } from "./characters/characters.js"
-import { addCharactersToPlayerState, loadCharactersToGameState, getPlayableCharacters } from "./characters/recruitingCharacters.js"
+import { addCharactersToPlayerState, getPlayableCharacters } from "./characters/recruitingCharacters.js"
 
 const playerState = {
     units: [],
@@ -12,7 +12,6 @@ const gameState = {
     mode: undefined,
     history: undefined,
     currentLevel: undefined,
-    units: [],
     currentHistory: 0,
     currentDialog: 0,
     currentGameLevel: 0,
@@ -25,10 +24,10 @@ const gameState = {
 }
 
 export async function stateGame() {
+    // characters are loaded from JSON and transformed into Character instances
     const dataFromCharacters = await dataCharacters()
-    loadCharactersToGameState(dataFromCharacters, gameState.units)
 
-    const playableCharacters = await getPlayableCharacters(gameState.units)
+    const playableCharacters = getPlayableCharacters(dataFromCharacters)
     addCharactersToPlayerState(playerState, playableCharacters)
 
     return gameState
