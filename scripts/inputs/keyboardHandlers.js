@@ -1,4 +1,4 @@
-import { tryMoveSelector } from "../systems/movement.js"
+import { tryMoveSelector, tryMoveUnit } from "../systems/movement.js"
 import { eventBus } from "../utils/eventBus.js"
 
 const movementKeys = ['w', 'a', 's', 'd']
@@ -17,6 +17,10 @@ export function setupDialogInput(gameState) {
         }
 
         if (['LVL'].includes(gameState.mode)) {
+            if (gameState.characterSelected) {
+                tryMoveUnit(gameState)
+                return
+            }
             eventBus.emit('select:character', gameState)
         }
     })
