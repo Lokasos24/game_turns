@@ -12,6 +12,7 @@ const gameState = {
     mode: undefined,
     history: undefined,
     currentLevel: undefined,
+    turn: undefined,
     currentHistory: 0,
     currentDialog: 0,
     currentGameLevel: 0,
@@ -24,7 +25,6 @@ const gameState = {
 }
 
 export async function stateGame() {
-    // characters are loaded from JSON and transformed into Character instances
     const dataFromCharacters = await dataCharacters()
 
     const playableCharacters = getPlayableCharacters(dataFromCharacters)

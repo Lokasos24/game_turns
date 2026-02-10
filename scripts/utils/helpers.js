@@ -1,16 +1,27 @@
-export function verifyNextTile({ map }, nextPositionY, nextPositionX) {
-    const tileY = map[nextPositionY]
-    if (tileY === undefined || tileY === null) return false
+import { TILE_DEFS } from "../constants/globalConsts.js"
 
-    const tileX = tileY[nextPositionX]
-    if (tileX === undefined || tileX === null) return false
+export function verifyLimitMap({ map }, nextPositionY, nextPositionX) {
+    const nextTile = map[nextPositionY]?.[nextPositionX]
+    if (nextTile === undefined || nextTile === null) return false
 
     return true
 }
 
-export function captureUnitStats({ selector, playerState }) {
+export function captureUnitStats({ selector, playerState, characterSelected }) {
     const { units } = playerState
     const { x, y } = selector
 
-    return units.find(unit => unit.drawX === x && unit.drawY === y)
+    const hoverUnit = units.find(unit => unit.drawX === x && unit.drawY === y)
+    const unitSelected = units.find(unit => unit.id === characterSelected)
+
+    return unitSelected || hoverUnit
+}
+
+export function verifyNextTileWakable({currentLevel, selector}){
+    const {map} = currentLevel
+    const nextTile = map[selector.y]?.[selector.x]
+
+    if(!TILE_DEFS[nextTile].walkable) return false
+
+    return true
 }

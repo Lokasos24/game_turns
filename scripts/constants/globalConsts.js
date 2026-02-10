@@ -1,7 +1,7 @@
 export const TILE_SIZE = 32
 export const TILE_DEFS = {
-    0: { type: 'grass', color: '#144A1E' },
-    1: { type: 'wall', color: 'brown' }
+    0: { type: 'grass', walkable: true, cost: 1, color: '#144A1E' },
+    1: { type: 'wall', walkable: false, cost: 999, color: 'brown' }
 }
 
 export const CONFIG_LIMITS = {
