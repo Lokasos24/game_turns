@@ -14,7 +14,7 @@ export function gameLoop(gameState) {
         requestAnimationFrame(loop)
     }
 
-    loop()
+    // loop()
 }
 
 function update(gameState, deltaTime) {

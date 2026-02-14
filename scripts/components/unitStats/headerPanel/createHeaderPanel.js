@@ -1,9 +1,9 @@
-import { captureUnitStats } from "../../../utils/helpers.js"
+import { captureUnit } from "../../../utils/helpers.js"
 
 export function createHeaderPanel(gameState, headerPanel) {
     headerPanel.replaceChildren()
 
-    const changes = captureUnitStats(gameState)
+    const changes = captureUnit(gameState)
 
     if (!changes) return
 

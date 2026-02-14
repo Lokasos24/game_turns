@@ -7,7 +7,7 @@ export function verifyLimitMap({ map }, nextPositionY, nextPositionX) {
     return true
 }
 
-export function captureUnitStats({ selector, playerState, characterSelected }) {
+export function captureUnit({ selector, playerState, characterSelected }) {
     const { units } = playerState
     const { x, y } = selector
 
