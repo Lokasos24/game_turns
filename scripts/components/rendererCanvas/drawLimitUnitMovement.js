@@ -1,4 +1,4 @@
-export function drawLimitMovement(characterSelected, currentLevel, turn, playerState, ctx){
+export function drawLimitMovement(characterSelected, currentLevel, unitPath, ctx){
     // if(!turn || turn !== 'PLAYER') return
     if(!characterSelected) return
 

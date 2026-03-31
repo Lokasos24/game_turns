@@ -14,6 +14,13 @@ export const CONFIG_LIMITS = {
     "def": 40,
 }
 
+export const directions = [
+    { x: 0, y: -1 }, //up
+    { x: 1, y: 0 }, //left
+    { x: 0, y: 1 }, //down
+    { x: -1, y: 0 } //right
+];
+
 export const canvasWidth = 320 * 2
 export const canvasHeight = 320 * 2
 

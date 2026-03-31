@@ -21,6 +21,8 @@ const gameState = {
         y: 9,
     },
     characterSelected: undefined,
+    unitTarget: {},
+    unitPath: [],
     playerState,
 }
 

@@ -8,6 +8,7 @@ class EventBus {
             this.events[event] = []
         }
         this.events[event].push(callback)
+        return () => this.off(event, callback)
     }
 
     emit(event, data) {

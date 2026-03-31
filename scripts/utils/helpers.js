@@ -1,4 +1,4 @@
-import { TILE_DEFS } from "../constants/globalConsts.js"
+import { TILE_DEFS, directions } from "../constants/globalConsts.js"
 
 export function verifyLimitMap({ map }, nextPositionY, nextPositionX) {
     const nextTile = map[nextPositionY]?.[nextPositionX]
@@ -24,4 +24,29 @@ export function verifyNextTileWakable({currentLevel, selector}){
     if(!TILE_DEFS[nextTile].walkable) return false
 
     return true
+}
+
+export function getNeighbors({ currentLevel }, unit){
+    const neightbors = []
+
+    for(const direction of directions){
+        const neightbor = getNode(currentLevel, unit.drawX + direction.x, unit.drawY + direction.y)
+
+        if(neightbor && neightbor.walkable){
+            neightbors.push(neightbor)
+        }
+    }
+
+    return neightbors
+}
+
+function getNode({map}, x, y){
+    if(!map?.[y]?.length) return
+    if(x < 0 || x >= map[y]?.[x].length || y < 0 || y >= map[y].length) return
+
+    return {
+        ...TILE_DEFS[map[y]?.[x]],
+        x,
+        y
+    }
 }
