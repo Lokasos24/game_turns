@@ -33,9 +33,8 @@ export function pathFinding(gameState) {
     if (!unit) return
 
     const positionsFreeToMove = getNeighbors(gameState, unit)
-    console.log(positionsFreeToMove)
 
-    return positionsFreeToMove
+    gameState.unitPath = positionsFreeToMove
 }
 
 export function moveUnit(gameState) {
@@ -43,6 +42,7 @@ export function moveUnit(gameState) {
 
     const unit = captureUnit(gameState)
     const { unitTarget } = gameState
+    const { unitPath } = gameState
 
     unit.drawX = unitTarget.x
     unit.drawY = unitTarget.y
