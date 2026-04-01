@@ -38,13 +38,19 @@ export function pathFinding(gameState) {
 }
 
 export function moveUnit(gameState) {
-    if(!gameState.unitTarget) return
+    if (!gameState.unitTarget) return
 
     const unit = captureUnit(gameState)
     const { unitTarget } = gameState
     const { unitPath } = gameState
 
+    if (unit.drawX === unitTarget.x && unit.drawY === unitTarget.y || unit.moved) {
+        gameState.characterSelected = null
+        return
+    }
+
     unit.drawX = unitTarget.x
     unit.drawY = unitTarget.y
+    unit.moved = true
     gameState.characterSelected = null
 }

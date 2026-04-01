@@ -6,6 +6,7 @@
         "gender": "M",
         "inventory": [],
         "level": 10,
+        "moved": false,
         "stats": {
             "hp": 23,
             "str": 14,
@@ -28,6 +29,7 @@
         "gender": "M",
         "inventory": [],
         "level": 10,
+        "moved": false,
         "stats": {
             "hp": 30,
             "str": 12,
@@ -50,6 +52,7 @@
         "gender": "F",
         "inventory": [],
         "level": 10,
+        "moved": false,
         "stats": {
             "hp": 26,
             "str": 11,
@@ -72,6 +75,7 @@
         "gender": "M",
         "inventory": [],
         "level": 10,
+        "moved": false,
         "stats": {
             "hp": 24,
             "str": 9,
@@ -94,6 +98,7 @@
         "gender": "F",
         "inventory": [],
         "level": 10,
+        "moved": false,
         "stats": {
             "hp": 20,
             "str": 10,

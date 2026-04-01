@@ -1,5 +1,5 @@
 export class Character {
-    constructor({ id, name, kind, gender, inventory = [], level = 1, stats = {}, status = {} } = {}) {
+    constructor({ id, name, kind, gender, inventory = [], level = 1, moved = false, stats = {}, status = {} } = {}) {
         this.id = id
         this.name = name
         this.class = kind || status.class || 'Unit'
@@ -7,6 +7,7 @@ export class Character {
         this.gender = gender
         this.inventory = Array.isArray(inventory) ? inventory : []
         this.level = Number.isFinite(level) ? level : 1
+        this.moved = moved || false
         this.stats = stats || {}
         this.status = Object.assign({ recruited: false }, status)
         this.drawX = undefined
