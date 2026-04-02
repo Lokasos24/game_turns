@@ -37,7 +37,7 @@ export function moveSelectorInput(gameState) {
     isMoveInputSetup = true
 
     document.addEventListener('keydown', event => {
-        if (gameState.mode !== 'LVL') return
+        if (!MODE.GAMEPLAY.includes(gameState.mode)) return
 
         if (directionMap[event.key]) {
             const [dx, dy] = directionMap[event.key]

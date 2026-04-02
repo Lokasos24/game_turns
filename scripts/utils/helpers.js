@@ -53,3 +53,9 @@ function getNode({map}, x, y){
         y
     }
 }
+
+export function verifyIsUnitMove({drawX, drawY, moved}, {y, x}){
+    if (drawX === x && drawY === y || moved) {
+        return true
+    }
+}

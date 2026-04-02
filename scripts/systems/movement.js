@@ -1,4 +1,10 @@
-import { captureUnit, getNeighbors, verifyLimitMap, verifyNextTileWakable } from "../utils/helpers.js"
+import { 
+    captureUnit, 
+    getNeighbors, 
+    verifyLimitMap, 
+    verifyNextTileWakable,
+    verifyIsUnitMove
+} from "../utils/helpers.js"
 import { eventBus } from "../utils/eventBus.js"
 
 export function tryMoveSelector(gameState, yPosition, xPosition) {
@@ -44,13 +50,26 @@ export function moveUnit(gameState) {
     const { unitTarget } = gameState
     const { unitPath } = gameState
 
-    if (unit.drawX === unitTarget.x && unit.drawY === unitTarget.y || unit.moved) {
+    if(verifyIsUnitMove(unit, unitTarget)) {
         gameState.characterSelected = null
         return
     }
 
-    unit.drawX = unitTarget.x
-    unit.drawY = unitTarget.y
-    unit.moved = true
-    gameState.characterSelected = null
+    let pathFree = {}
+
+    unitPath.forEach((tile) => {
+        pathFree[`${tile.y},${tile.x}`] = {
+            cost: tile.cost,
+            walkable: tile.walkable
+        }
+    })
+
+    if(pathFree[`${unitTarget.y.toString()},${unitTarget.x.toString()}`]){
+        unit.drawX = unitTarget.x
+        unit.drawY = unitTarget.y
+        unit.moved = true
+        gameState.characterSelected = null
+    }
+
+    pathFree = {}
 }
