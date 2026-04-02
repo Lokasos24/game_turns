@@ -2,7 +2,7 @@ export function initCharactersPositions(gameState) {
     if (gameState.mode !== 'LVL') return
 
     const playerState = gameState.playerState
-    const currentLevel = gameState.currentLevel
+    const currentLevel = gameState.world?.currentLevel
 
     currentLevel.initPlayerPositions.forEach(({ x, y }, i) => {
         playerState.units[i].drawX = x

@@ -5,7 +5,7 @@ export function tryMoveSelector(gameState, yPosition, xPosition) {
     const nextY = gameState.selector.y + yPosition
     const nextX = gameState.selector.x + xPosition
 
-    if (!verifyLimitMap(gameState.currentLevel, nextY, nextX)) return
+    if (!verifyLimitMap(gameState.world.currentLevel, nextY, nextX)) return
 
     gameState.selector.y = nextY
     gameState.selector.x = nextX

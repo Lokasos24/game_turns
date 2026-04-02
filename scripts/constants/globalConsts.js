@@ -33,3 +33,8 @@ export const historyUrls = [
 export const mapsUrls = [
     "scripts/assets/maps/map1.json",
 ]
+
+export const MODE = {
+    GAMEPLAY: ['LVL'],
+    DIALOG: ['STORY', 'STORY_EVENT', 'RECLUT_EVENT', 'LVL_EVENT']
+}

@@ -11,7 +11,12 @@ const playerState = {
 const gameState = {
     mode: undefined,
     history: undefined,
-    currentLevel: undefined,
+    world: {
+        units: [],
+        terrain: [],
+        phase: undefined,
+        currentLevel: undefined,
+    },
     turn: undefined,
     currentHistory: 0,
     currentDialog: 0,

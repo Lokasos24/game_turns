@@ -17,8 +17,10 @@ export function captureUnit({ selector, playerState, characterSelected }) {
     return unitSelected || hoverUnit
 }
 
-export function verifyNextTileWakable({currentLevel, selector}){
+export function verifyNextTileWakable({world, selector}){
+    const {currentLevel} = world
     const {map} = currentLevel
+    
     const nextTile = map[selector.y]?.[selector.x]
 
     if(!TILE_DEFS[nextTile].walkable) return false
@@ -26,8 +28,9 @@ export function verifyNextTileWakable({currentLevel, selector}){
     return true
 }
 
-export function getNeighbors({ currentLevel }, unit){
+export function getNeighbors({ world }, unit){
     const neightbors = []
+    const { currentLevel } = world
 
     for(const direction of directions){
         const neightbor = getNode(currentLevel, unit.drawX + direction.x, unit.drawY + direction.y)

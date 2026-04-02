@@ -1,9 +1,15 @@
 import { tryMoveSelector } from "../systems/movement.js"
 import { eventBus } from "../utils/eventBus.js"
+import { MODE } from "../constants/globalConsts.js"
 
-const movementKeys = ['w', 'a', 's', 'd']
-let isDialogInputSetup = false
-let isMoveInputSetup = false
+const directionMap = {
+    'w': [0, -1],
+    's': [0, 1],
+    'd': [1, 0],
+    'a': [-1, 0]
+}
+let isDialogInputSetup = null
+let isMoveInputSetup = null
 
 export function setupEnterInput(gameState) {
     if (isDialogInputSetup) return
@@ -12,11 +18,11 @@ export function setupEnterInput(gameState) {
     document.addEventListener('keydown', event => {
         if (event.key !== 'Enter') return
 
-        if (['STORY', 'STORY_EVENT', 'RECLUT_EVENT'].includes(gameState.mode)) {
+        if (MODE.DIALOG.includes(gameState.mode)) {
             eventBus.emit('change:dialog', gameState)
         }
 
-        if (['LVL'].includes(gameState.mode)) {
+        if (MODE.GAMEPLAY.includes(gameState.mode)) {
             if (gameState.characterSelected) {
                 eventBus.emit('move:character', gameState)
                 return
@@ -32,10 +38,12 @@ export function moveSelectorInput(gameState) {
 
     document.addEventListener('keydown', event => {
         if (gameState.mode !== 'LVL') return
-        if (event.key === 'w') tryMoveSelector(gameState, -1, 0)
-        if (event.key === 's') tryMoveSelector(gameState, 1, 0)
-        if (event.key === 'd') tryMoveSelector(gameState, 0, 1)
-        if (event.key === 'a') tryMoveSelector(gameState, 0, -1)
-        if (movementKeys.includes(event.key)) eventBus.emit('move:selector', gameState)
+
+        if (directionMap[event.key]) {
+            const [dx, dy] = directionMap[event.key]
+            tryMoveSelector(gameState, dy, dx)
+            eventBus.emit('move:selector', gameState)
+        }
+
     })
 }
