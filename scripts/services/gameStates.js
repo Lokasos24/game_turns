@@ -27,6 +27,7 @@ const gameState = {
     },
     characterSelected: undefined,
     unitTarget: {},
+    allNodes: [],
     unitPath: [],
     playerState,
 }

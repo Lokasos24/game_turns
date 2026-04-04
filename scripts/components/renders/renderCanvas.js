@@ -12,7 +12,7 @@ const ctx = canvas.getContext('2d')
 canvas.width = canvasWidth
 canvas.height = canvasHeight
 
-export function renderCanvas({ history, mode, world, selector, playerState, unitPath, characterSelected }) {
+export function renderCanvas({ history, mode, world, selector, playerState, allNodes, characterSelected }) {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight)
 
     if (mode === "STORY") {
@@ -21,9 +21,9 @@ export function renderCanvas({ history, mode, world, selector, playerState, unit
 
     if (world.currentLevel && mode === "LVL") {
         drawCombatMap(world.currentLevel, ctx)
+        drawSelector(selector, ctx)
         drawPlayerUnits(playerState, ctx)
         drawEnemiesUnits(world.currentLevel, ctx)
-        drawSelector(selector, ctx)
-        drawLimitMovement(characterSelected, world.currentLevel, unitPath, ctx)
+        drawLimitMovement(characterSelected, world.currentLevel, allNodes, ctx)
     }
 }

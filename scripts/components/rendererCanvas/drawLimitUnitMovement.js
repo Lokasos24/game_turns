@@ -1,13 +1,14 @@
 import { TILE_SIZE } from "../../constants/globalConsts.js"
 
-export function drawLimitMovement(characterSelected, currentLevel, unitPath, ctx){
+//allNodes
+export function drawLimitMovement(characterSelected, currentLevel, reachableNodes, ctx){
     // if(!turn || turn !== 'PLAYER') return
-    if(!characterSelected || !unitPath) return
+    if(!characterSelected || !reachableNodes) return
 
     const { map } = currentLevel
 
-    unitPath.forEach((value) => {
-        const { x, y } = value
+    reachableNodes.forEach((node) => {
+        const { x, y } = node
         if(map?.[y]?.[x] !== undefined){
             ctx.strokeStyle = 'blue'
             ctx.lineWidth = 1

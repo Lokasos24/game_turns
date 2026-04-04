@@ -42,10 +42,10 @@ export function pathFinding(gameState) {
     const reachable = getRecheableNodes(gameState, unit)
 
     const selectorInRange = reachable.find((node) => node.x === selector.x && node.y === selector.y)
-    if(!selectorInRange){
-        gameState.unitPath = reachable
-        return
-    }
+
+    gameState.allNodes = reachable
+
+    if(!selectorInRange) return
 
     const targetNode = {
         x: selector.x,
@@ -86,4 +86,5 @@ export function moveUnit(gameState) {
     }
 
     pathFree = {}
+    gameState.allNodes = []
 }
