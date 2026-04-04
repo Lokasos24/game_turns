@@ -1,10 +1,10 @@
 import {
     captureUnit,
-    getRecheableNodes,
     verifyLimitMap,
     verifyNextTileWakable,
     verifyIsUnitMove
 } from "../utils/helpers.js"
+import { aStar, getRecheableNodes } from "./astar.js"
 import { eventBus } from "../utils/eventBus.js"
 
 export function tryMoveSelector(gameState, yPosition, xPosition) {
@@ -34,13 +34,27 @@ export function tryMoveUnit(gameState) {
 export function pathFinding(gameState) {
     // if(!gameState.turn || gameState.turn !== `PLAYER`) return
     if (!gameState.characterSelected) return
+    const {selector} = gameState
 
     const unit = captureUnit(gameState)
     if (!unit) return
 
-    const positionsFreeToMove = getRecheableNodes(gameState, unit)
+    const reachable = getRecheableNodes(gameState, unit)
 
-    gameState.unitPath = positionsFreeToMove
+    const selectorInRange = reachable.find((node) => node.x === selector.x && node.y === selector.y)
+    if(!selectorInRange){
+        gameState.unitPath = reachable
+        return
+    }
+
+    const targetNode = {
+        x: selector.x,
+        y: selector.y
+    }
+
+    const optimalPath = aStar(gameState, unit, targetNode, reachable)
+
+    gameState.unitPath = optimalPath
 }
 
 export function moveUnit(gameState) {
