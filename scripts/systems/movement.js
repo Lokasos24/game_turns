@@ -1,7 +1,7 @@
-import { 
-    captureUnit, 
-    getNeighbors, 
-    verifyLimitMap, 
+import {
+    captureUnit,
+    getRecheableNodes,
+    verifyLimitMap,
     verifyNextTileWakable,
     verifyIsUnitMove
 } from "../utils/helpers.js"
@@ -38,7 +38,7 @@ export function pathFinding(gameState) {
     const unit = captureUnit(gameState)
     if (!unit) return
 
-    const positionsFreeToMove = getNeighbors(gameState, unit)
+    const positionsFreeToMove = getRecheableNodes(gameState, unit)
 
     gameState.unitPath = positionsFreeToMove
 }

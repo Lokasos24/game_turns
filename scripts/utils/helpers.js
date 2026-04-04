@@ -28,27 +28,78 @@ export function verifyNextTileWakable({world, selector}){
     return true
 }
 
-export function getNeighbors({ world }, unit){
-    const neightbors = []
-    const { currentLevel } = world
+export function getRecheableNodes(gameState, unit){
+    const reachable = []
+    const visited = new Set()
+    const queue = [
+        {
+            x: unit.drawX,
+            y: unit.drawY,
+            cost: 0
+        }
+    ]
 
-    for(const direction of directions){
-        const neightbor = getNode(currentLevel, unit.drawX + direction.x, unit.drawY + direction.y)
+    while(queue.length > 0){
+        let current = queue[0]
+        let minCostIndex = 0
+        
+        for(let i = 1; i < queue.length; i++){
+            if(queue[i].cost < current.cost){
+                current = queue[i]
+                minCostIndex = i
+            }
+        }
 
-        if(neightbor && neightbor.walkable){
-            neightbors.push(neightbor)
+        queue.splice(minCostIndex, 1)
+
+        const key = `${current.x},${current.y}`
+
+        if(visited.has(key)) continue
+        visited.add(key)
+
+        if(current.cost > unit.stats.mov) continue
+
+        reachable.push({
+            x: current.x,
+            y: current.y,
+            cost: current.cost
+        })
+
+        for(const direction of directions){
+            const neighborX = current.x + direction.x
+            const neighborY = current.y + direction.y
+            const neighborKey = `${neighborX},${neighborY}`
+
+            if(visited.has(neighborKey)) continue
+
+            const neighbor = getNode(gameState.world.currentLevel, neighborX, neighborY)
+
+            if(!neighbor || !neighbor.walkable) continue
+
+            const newCost = current.cost + (neighbor.cost || 1)
+
+            if (newCost <= unit.stats.mov) {
+                queue.push({
+                    x: neighborX,
+                    y: neighborY,
+                    cost: newCost
+                })
+            }
+            
         }
     }
 
-    return neightbors
+    return reachable
 }
 
 function getNode({map}, x, y){
-    if(!map?.[y]?.length) return
-    if(x < 0 || x >= map[y]?.[x].length || y < 0 || y >= map[y].length) return
+    // if(!map?.[y]?.length) return
+    if(y < 0 || y >= map.length) return
+    if(x < 0 || x >= map[y].length) return
+    // if(x < 0 || x >= map[y]?.[x]?.length || y < 0 || y >= map[y].length) return
 
     return {
-        ...TILE_DEFS[map[y]?.[x]],
+        ...TILE_DEFS[map[y][x]],
         x,
         y
     }
