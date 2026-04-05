@@ -56,9 +56,7 @@ export function reconstructPath(node){
 }
 
 export function verifyIsUnitMove({drawX, drawY, moved}, {y, x}){
-    if (drawX === x && drawY === y || moved) {
-        return true
-    }
+    return drawX === x && drawY === y || moved
 }
 
 export function selectorInRange({selector, allNodes}){

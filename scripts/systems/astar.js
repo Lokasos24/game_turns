@@ -106,9 +106,7 @@ export function aStar(gameState, unit, goal){
             const neighborX = current.x + direction.x
             const neighborY = current.y + direction.y
 
-            const isReachable = gameState.allNodes.some(
-                node => node.x === neighborX && node.y === neighborY
-            )
+            const isReachable = gameState.allNodes.some(node => node.x === neighborX && node.y === neighborY)
             if(!isReachable) continue
 
             if(closedList.has(`${neighborX},${neighborY}`)) continue

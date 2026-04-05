@@ -1,6 +1,5 @@
 import { TILE_SIZE } from "../../constants/globalConsts.js"
 
-//allNodes
 export function drawLimitMovement(characterSelected, currentLevel, reachableNodes, ctx){
     // if(!turn || turn !== 'PLAYER') return
     if(!characterSelected || !reachableNodes) return
@@ -10,9 +9,10 @@ export function drawLimitMovement(characterSelected, currentLevel, reachableNode
     reachableNodes.forEach((node) => {
         const { x, y } = node
         if(map?.[y]?.[x] !== undefined){
-            ctx.strokeStyle = 'blue'
-            ctx.lineWidth = 1
-            ctx.strokeRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE)
+            ctx.globalCompositeOperation = 'multiply'
+            ctx.fillStyle = 'rgb(243, 247, 23)'
+            ctx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE)
+            ctx.globalCompositeOperation = 'source-over'
         }
     })
 }

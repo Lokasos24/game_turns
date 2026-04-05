@@ -6,7 +6,8 @@ import {
     tryMoveUnit,
     moveUnit,
     optimalPath,
-    nodesExplored } from "../systems/movement.js"
+    nodesExplored 
+} from "../systems/movement.js"
 
 export function initAllEvents() {
     eventBus.on('move:character', tryMoveUnit)

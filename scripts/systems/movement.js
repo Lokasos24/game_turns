@@ -23,10 +23,11 @@ export function tryMoveUnit(gameState) {
 
     if (!characterSelected) return
     if (!verifyNextTileWakable(gameState)) return
+    const { selector } = gameState
 
     gameState.unitTarget = {
-        x: gameState.selector.x,
-        y: gameState.selector.y
+        x: selector.x,
+        y: selector.y
     }
 
     eventBus.emit('moved:character', gameState)
@@ -57,7 +58,6 @@ export function optimalPath(gameState){
     const optimalPath = aStar(gameState, unit, targetNode)
 
     gameState.unitPath = optimalPath
-    console.log(optimalPath)
 }
 
 export function moveUnit(gameState) {
@@ -90,4 +90,5 @@ export function moveUnit(gameState) {
 
     pathFree = {}
     gameState.allNodes = []
+    gameState.characterSelected = null
 }
