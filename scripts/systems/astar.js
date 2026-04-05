@@ -69,7 +69,7 @@ export function getRecheableNodes(gameState, unit){
     return reachable
 }
 
-export function aStar(gameState, unit, goal, reachableNodes){
+export function aStar(gameState, unit, goal){
     const openList = [
         {
             x: unit.drawX,
@@ -106,7 +106,7 @@ export function aStar(gameState, unit, goal, reachableNodes){
             const neighborX = current.x + direction.x
             const neighborY = current.y + direction.y
 
-            const isReachable = reachableNodes.some(
+            const isReachable = gameState.allNodes.some(
                 node => node.x === neighborX && node.y === neighborY
             )
             if(!isReachable) continue
@@ -136,5 +136,5 @@ export function aStar(gameState, unit, goal, reachableNodes){
         }
     }
 
-    return reachableNodes;
+    return gameState.allNodes;
 }
