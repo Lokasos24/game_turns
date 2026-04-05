@@ -3,7 +3,8 @@
 ---
 
 ## ⚠️ IMPORTANTE
-``PROYECTO EN FASE INICIAL: Actualmente solo se visualiza el canvas y personajes basicos, sin logica de juego completa``
+``PROYECTO EN FASE MEDIA: Actualmente se visualiza el Canvas y personajes basicos, 
+con logica para mover el personaje seleccionado``
 
 ---
 
@@ -15,8 +16,8 @@
 
 ## 🚗 Principales funcionalidades
 - ⬜ Seleccion de niveles
-- ⬜ Mover el personaje seleccionado
-- ⬜ Restriccion de movimientos
+- ✅ Mover el personaje seleccionado
+- ✅ Restriccion de movimientos
 - ⬜ Atacar a un enemigo
 - ⬜ Tienda
 
