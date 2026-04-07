@@ -13,11 +13,12 @@ const gameState = {
     history: undefined,
     world: {
         units: [],
+        enemies: [],
         terrain: [],
         phase: undefined,
+        turn: undefined,
         currentLevel: undefined,
     },
-    turn: undefined,
     currentHistory: 0,
     currentDialog: 0,
     currentGameLevel: 0,

@@ -2,6 +2,7 @@ import dataFetchs from "../dataFetching/fetch.js"
 import { historyUrls } from "../../constants/globalConsts.js"
 import renderApp from "../../components/renderApp.js"
 import { initCharactersPositions } from "../characters/defineCharactersPositions.js"
+import { MODE } from "../../constants/globalConsts.js"
 
 async function loadHistory(gameState) {
     const url = historyUrls[gameState.currentHistory]
@@ -16,6 +17,10 @@ export async function changeScenes(gameState, newGameMode, mapToBeat) {
     gameState.history = historyData
     gameState.world.currentLevel = mapToBeat
     gameState.currentDialog = 0
+    if(MODE.GAMEPLAY.includes(gameState.mode)){
+        gameState.world.turn = 0
+        gameState.world.phase = 'PLAYER'
+    }
     initCharactersPositions(gameState)
     renderApp(gameState)
 }

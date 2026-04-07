@@ -2,6 +2,7 @@ import { eventBus } from "./eventBus.js"
 import { selectCharacter } from "../systems/selectCharacter.js"
 import { changeDialog } from "../components/dialog/changeDialog.js"
 import { createPanel } from "../components/unitStats/panelStatsMain.js"
+import { changeTurn } from "../systems/turns.js"
 import { 
     tryMoveUnit,
     moveUnit,
@@ -17,4 +18,6 @@ export function initAllEvents() {
     eventBus.on('change:dialog', changeDialog)
     eventBus.on('move:selector', optimalPath)
     eventBus.on('move:selector', createPanel)
+
+    eventBus.on('allmoved:characters', changeTurn)
 }

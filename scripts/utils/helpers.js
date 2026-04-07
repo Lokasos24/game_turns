@@ -62,3 +62,8 @@ export function verifyIsUnitMove({drawX, drawY, moved}, {y, x}){
 export function selectorInRange({selector, allNodes}){
     return allNodes.find((node) => node.x === selector.x && node.y === selector.y)
 }
+
+export function isPlayerPhase({world}){
+    const {phase} = world
+    return phase === 'PLAYER'
+}

@@ -3,12 +3,14 @@ import {
     verifyLimitMap,
     verifyNextTileWakable,
     verifyIsUnitMove,
-    selectorInRange
+    selectorInRange,
+    isPlayerPhase
 } from "../utils/helpers.js"
 import { aStar, getRecheableNodes } from "./astar.js"
 import { eventBus } from "../utils/eventBus.js"
 
 export function tryMoveSelector(gameState, yPosition, xPosition) {
+    if(!isPlayerPhase(gameState)) return
     const nextY = gameState.selector.y + yPosition
     const nextX = gameState.selector.x + xPosition
 
@@ -19,6 +21,7 @@ export function tryMoveSelector(gameState, yPosition, xPosition) {
 }
 
 export function tryMoveUnit(gameState) {
+    if(!isPlayerPhase(gameState)) return
     const characterSelected = captureUnit(gameState)
 
     if (!characterSelected) return
@@ -34,6 +37,7 @@ export function tryMoveUnit(gameState) {
 }
 
 export function nodesExplored(gameState){
+    if(!isPlayerPhase(gameState)) return
     if (!gameState.characterSelected) return
 
     const unit = captureUnit(gameState)
@@ -45,6 +49,7 @@ export function nodesExplored(gameState){
 }
 
 export function optimalPath(gameState){
+    if(!isPlayerPhase(gameState)) return
     if(!gameState.characterSelected) return
     if(!selectorInRange(gameState)) return
     const {selector} = gameState
@@ -61,6 +66,7 @@ export function optimalPath(gameState){
 }
 
 export function moveUnit(gameState) {
+    if(!isPlayerPhase(gameState)) return
     if (!gameState.unitTarget) return
 
     const unit = captureUnit(gameState)
@@ -91,4 +97,5 @@ export function moveUnit(gameState) {
     pathFree = {}
     gameState.allNodes = []
     gameState.characterSelected = null
+    eventBus.emit('allmoved:characters', gameState)
 }
