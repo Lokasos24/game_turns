@@ -21,7 +21,7 @@ export function renderCanvas({ history, mode, world, selector, playerState, allN
 
     if (world.currentLevel && mode === "LVL") {
         drawCombatMap(world.currentLevel, ctx)
-        drawSelector(selector, ctx)
+        drawSelector(selector, world, ctx)
         drawPlayerUnits(playerState, ctx)
         drawEnemiesUnits(world.currentLevel, ctx)
         drawLimitMovement(characterSelected, world.currentLevel, allNodes, ctx)
