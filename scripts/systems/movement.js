@@ -4,7 +4,8 @@ import {
     verifyNextTileWakable,
     verifyIsUnitMove,
     selectorInRange,
-    isPlayerPhase
+    isPlayerPhase,
+    verifyUnitOnTile
 } from "../utils/helpers.js"
 import { aStar, getRecheableNodes } from "./astar.js"
 import { eventBus } from "../utils/eventBus.js"
@@ -74,6 +75,11 @@ export function moveUnit(gameState) {
     const { unitPath } = gameState
 
     if(verifyIsUnitMove(unit, unitTarget)) {
+        gameState.characterSelected = null
+        return
+    }
+
+    if(verifyUnitOnTile(gameState)){ 
         gameState.characterSelected = null
         return
     }
