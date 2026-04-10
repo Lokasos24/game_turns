@@ -1,0 +1,40 @@
+{
+    "enemies": [
+        {
+            "type": "Warrior",
+            "stats": {
+                "hp": 23,
+                "str": 14,
+                "skl": 13,
+                "spd": 9,
+                "lck": 7,
+                "def": 10,
+                "mov": 5
+            }
+        },
+        {
+            "type": "Archer",
+            "stats": {
+                "hp": 23,
+                "str": 14,
+                "skl": 13,
+                "spd": 9,
+                "lck": 7,
+                "def": 10,
+                "mov": 5
+            }
+        },
+        {
+            "type": "Soldier",
+            "stat": {
+                "hp": 23,
+                "str": 14,
+                "skl": 13,
+                "spd": 9,
+                "lck": 7,
+                "def": 10,
+                "mov": 5
+            }
+        }
+    ]
+}
