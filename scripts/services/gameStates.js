@@ -1,5 +1,6 @@
 import { dataCharacters } from "./characters/characters.js"
 import { addCharactersToPlayerState, getPlayableCharacters } from "./characters/recruitingCharacters.js"
+import { addEnemies, processEnemies } from "./enemies/enemies.js"
 
 const playerState = {
     units: [],
@@ -35,9 +36,12 @@ const gameState = {
 
 export async function stateGame() {
     const dataFromCharacters = await dataCharacters()
+    const dataFromEnemies = await processEnemies()
 
     const playableCharacters = getPlayableCharacters(dataFromCharacters)
     addCharactersToPlayerState(playerState, playableCharacters)
+    if(!gameState.world) return gameState
+    addEnemies(gameState, dataFromEnemies)
 
     return gameState
 }
