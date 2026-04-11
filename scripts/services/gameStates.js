@@ -36,12 +36,11 @@ const gameState = {
 
 export async function stateGame() {
     const dataFromCharacters = await dataCharacters()
-    const dataFromEnemies = await processEnemies()
 
     const playableCharacters = getPlayableCharacters(dataFromCharacters)
     addCharactersToPlayerState(playerState, playableCharacters)
     if(!gameState.world) return gameState
-    addEnemies(gameState, dataFromEnemies)
+    await addEnemies(gameState)
 
     return gameState
 }

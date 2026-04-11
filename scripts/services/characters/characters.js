@@ -1,7 +1,7 @@
 import dataFetchs from "../dataFetching/fetch.js"
 import { Character } from "./createCharacters.js"
 
-export async function characters() {
+async function characters() {
     const url = "scripts/assets/gameData/characters.json"
     const data = await dataFetchs(url)
     return data

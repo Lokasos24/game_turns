@@ -1,6 +1,7 @@
 {
     "id": 1,
     "limitUnits": 5,
+    "rangeEnemieLevels": [1, 3],
     "enemiesPositions": [
         {
             "x": 10,

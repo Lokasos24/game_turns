@@ -3,6 +3,7 @@ import { historyUrls } from "../../constants/globalConsts.js"
 import renderApp from "../../components/renderApp.js"
 import { initCharactersPositions } from "../characters/defineCharactersPositions.js"
 import { MODE } from "../../constants/globalConsts.js"
+import { defineEnemiesPositions } from "../enemies/enemies.js"
 
 async function loadHistory(gameState) {
     const url = historyUrls[gameState.currentHistory]
@@ -22,5 +23,6 @@ export async function changeScenes(gameState, newGameMode, mapToBeat) {
         gameState.world.phase = 'PLAYER'
     }
     initCharactersPositions(gameState)
+    defineEnemiesPositions(gameState, historyData)
     renderApp(gameState)
 }

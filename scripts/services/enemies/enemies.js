@@ -6,7 +6,12 @@ export async function processEnemies(){
     return data
 }
 
-export function addEnemies(gameState, dataEnemies){
-    if(!dataEnemies) return
-    gameState.world.enemies = dataEnemies
+export async function addEnemies(gameState){
+    const data = await processEnemies()
+    if(!data || !gameState.world.enemies) return
+    gameState.world.enemies = data
+}
+
+export function defineEnemiesPositions(gameState, history){
+    if(!history.enemiesPositions || !gameState.world.currentLevel) return
 }
