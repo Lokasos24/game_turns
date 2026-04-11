@@ -2,7 +2,9 @@ export class Enemies{
     constructor({type, level, stats}){
         this.type = type,
         this.level = level,
-        this.stats = stats
+        this.stats = stats,
+        this.x = undefined,
+        this.y = undefined
     }
 
     static fromJSON(data = {}) {
@@ -15,6 +17,8 @@ export class Enemies{
             level: data.level,
             stats: data.stats,
             status: data.status,
+            x: this.x,
+            y: this.y
         })
     }
 
