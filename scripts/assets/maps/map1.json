@@ -4,12 +4,22 @@
     "rangeEnemieLevels": [1, 3],
     "enemiesPositions": [
         {
+            "type": "Warrior",
+            "lvl": 3,
             "x": 10,
             "y": 2
         },
         {
+            "type": "Soldier",
+            "lvl": 4,
             "x": 2,
             "y": 10
+        },
+        {
+            "type": "Archer",
+            "lvl": 3,
+            "x": 3,
+            "y": 3
         }
     ],
     "initPlayerPositions": [

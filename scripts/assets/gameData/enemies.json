@@ -1,40 +1,31 @@
 {
-    "enemies": [
-        {
-            "type": "Warrior",
-            "stats": {
-                "hp": 23,
-                "str": 14,
-                "skl": 13,
-                "spd": 9,
-                "lck": 7,
-                "def": 10,
-                "mov": 5
-            }
+    "enemies": {
+        "Warrior":{
+            "hp": 23,
+            "str": 14,
+            "skl": 13,
+            "spd": 9,
+            "lck": 7,
+            "def": 10,
+            "mov": 5
         },
-        {
-            "type": "Archer",
-            "stats": {
-                "hp": 23,
-                "str": 14,
-                "skl": 13,
-                "spd": 9,
-                "lck": 7,
-                "def": 10,
-                "mov": 5
-            }
+        "Archer": {
+            "hp": 17,
+            "str": 16,
+            "skl": 14,
+            "spd": 10,
+            "lck": 8,
+            "def": 3,
+            "mov": 4
         },
-        {
-            "type": "Soldier",
-            "stat": {
-                "hp": 23,
-                "str": 14,
-                "skl": 13,
-                "spd": 9,
-                "lck": 7,
-                "def": 10,
-                "mov": 5
-            }
+        "Soldier": {
+            "hp": 27,
+            "str": 11,
+            "skl": 15,
+            "spd": 10,
+            "lck": 4,
+            "def": 7,
+            "mov": 6
         }
-    ]
+    }
 }
