@@ -1,4 +1,5 @@
 import dataFetchs from "../dataFetching/fetch.js"
+import { Enemies } from "./createEnemis.js"
 
 export async function processEnemies(){
     const url = 'scripts/assets/gameData/enemies.json'
@@ -8,10 +9,12 @@ export async function processEnemies(){
 
 export async function addEnemies(gameState){
     const data = await processEnemies()
-    if(!data || !gameState.world.enemies) return
-    gameState.world.enemies = data
-}
-
-export function defineEnemiesPositions(gameState, history){
-    if(!history.enemiesPositions || !gameState.world.currentLevel) return
+    if(!data || !gameState.world.enemies || !gameState.world.currentLevel) return
+    const {world} = gameState
+    const {currentLevel} = world
+    currentLevel.enemiesPositions.forEach((unit, i) => {
+        const allEnemies = data["enemies"]
+        const obtainStats = allEnemies[unit.type]
+        gameState.world.enemies.push(new Enemies(unit.type, unit.lvl, obtainStats, unit.x, unit.y))
+    })
 }

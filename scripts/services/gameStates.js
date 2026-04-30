@@ -40,7 +40,6 @@ export async function stateGame() {
     const playableCharacters = getPlayableCharacters(dataFromCharacters)
     addCharactersToPlayerState(playerState, playableCharacters)
     if(!gameState.world) return gameState
-    await addEnemies(gameState)
 
     return gameState
 }

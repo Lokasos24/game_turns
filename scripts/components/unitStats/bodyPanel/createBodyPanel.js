@@ -1,9 +1,10 @@
 import { captureUnit } from "../../../utils/helpers.js"
+import { getEnemie } from "../../../services/enemies/captureEnemie.js"
 
 export function createBodyPanel(gameState, bodyPanel) {
     bodyPanel.replaceChildren()
 
-    const changes = captureUnit(gameState)
+    const changes = captureUnit(gameState) || getEnemie(gameState)
 
     if (!changes || !changes.stats) return
 

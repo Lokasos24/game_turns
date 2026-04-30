@@ -1,22 +1,21 @@
 export class Enemies{
-    constructor({type, level, stats}){
+    constructor(type, level, stats, x, y){
         this.type = type,
         this.level = level,
         this.stats = stats,
-        this.x = undefined,
-        this.y = undefined
+        this.move = true,
+        this.x = x || undefined,
+        this.y = y || undefined
     }
 
     static fromJSON(data = {}) {
-        if (!data || typeof data !== 'object') throw new Error('Invalid character JSON')
-        if (data.id === undefined || data.name === undefined) {
-            throw new Error('Character JSON must include at least `id` and `name`')
-        }
+        if (!data || typeof data !== 'object') throw new Error('Invalid enemies JSON')
 
         return new Enemies({
+            type: data.type,
             level: data.level,
             stats: data.stats,
-            status: data.status,
+            move: this.move,
             x: this.x,
             y: this.y
         })
@@ -25,7 +24,10 @@ export class Enemies{
     toJson(){
         return {
             type: this.type,
-            stats: this.stats
+            level: this.level,
+            stats: this.stats,
+            x: this.x,
+            y: this.y
         }
     }
 }
