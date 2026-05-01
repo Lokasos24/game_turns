@@ -3,7 +3,7 @@ import {getEnemie} from "../../../services/enemies/captureEnemie.js"
 
 export function createHeaderPanel(gameState, headerPanel) {
     headerPanel.replaceChildren()
-
+    if(gameState.world.phase !== "PLAYER") return
     const changes = captureUnit(gameState) || getEnemie(gameState)
 
     if (!changes) return
