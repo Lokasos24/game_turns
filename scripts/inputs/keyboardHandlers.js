@@ -1,5 +1,5 @@
 import { tryMoveSelector } from "../systems/movements/movement.js"
-import { eventBus } from "../utils/eventBus.js"
+import { eventBus } from "../managers/eventBus.js"
 import { MODE } from "../constants/globalConsts.js"
 
 const directionMap = {

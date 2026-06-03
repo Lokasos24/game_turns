@@ -6,7 +6,7 @@ import { verifyIsUnitMove } from "../world/verifyIsUnitMove.js"
 import { selectorInRange } from "../world/selectorInRange.js"
 import { verifyUnitOnTile } from "../world/verifyUnitOnTile.js"
 import { aStar, getRecheableNodes } from "./astar.js"
-import { eventBus } from "../../utils/eventBus.js"
+import { eventBus } from "../../managers/eventBus.js"
 
 export function tryMoveSelector(gameState, yPosition, xPosition) {
     if(!isPlayerPhase(gameState)) return
