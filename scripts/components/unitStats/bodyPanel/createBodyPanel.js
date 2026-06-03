@@ -1,4 +1,4 @@
-import { captureUnit } from "../../../utils/helpers.js"
+import { captureUnit } from "../../../services/characters/captureUnit.js"
 import { getEnemie } from "../../../services/enemies/captureEnemie.js"
 
 export function createBodyPanel(gameState, bodyPanel) {

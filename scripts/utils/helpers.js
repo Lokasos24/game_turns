@@ -7,16 +7,6 @@ export function verifyLimitMap({ map }, nextPositionY, nextPositionX) {
     return true
 }
 
-export function captureUnit({ selector, playerState, characterSelected }) {
-    const { units } = playerState
-    const { x, y } = selector
-
-    const hoverUnit = units.find(unit => unit.drawX === x && unit.drawY === y)
-    const unitSelected = units.find(unit => unit.id === characterSelected)
-
-    return unitSelected || hoverUnit
-}
-
 export function verifyUnitOnTile({ playerState, characterSelected, unitTarget }){
     if(!unitTarget) return
     const { units } = playerState

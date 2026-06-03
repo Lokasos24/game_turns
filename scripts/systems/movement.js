@@ -1,5 +1,5 @@
+import { captureUnit } from "../services/characters/captureUnit.js"
 import {
-    captureUnit,
     verifyLimitMap,
     verifyNextTileWakable,
     verifyIsUnitMove,
