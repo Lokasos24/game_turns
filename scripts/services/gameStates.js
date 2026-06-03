@@ -1,5 +1,5 @@
-import { dataCharacters } from "./characters/characters.js"
-import { addCharactersToPlayerState, getPlayableCharacters } from "./characters/recruitingCharacters.js"
+import { dataCharacters } from "../systems/characters/characters.js"
+import { addCharactersToPlayerState, getPlayableCharacters } from "../systems/characters/recruitingCharacters.js"
 import { addEnemies, processEnemies } from "./enemies/enemies.js"
 
 const playerState = {

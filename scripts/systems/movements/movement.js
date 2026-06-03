@@ -1,4 +1,4 @@
-import { captureUnit } from "../../services/characters/captureUnit.js"
+import { captureUnit } from "../characters/captureUnit.js"
 import {
     verifyLimitMap,
     verifyNextTileWakable,

@@ -1,4 +1,4 @@
-import dataFetchs from "../dataFetching/fetch.js"
+import dataFetchs from "../../services/dataFetching/fetch.js"
 import { Character } from "./createCharacters.js"
 
 async function characters() {

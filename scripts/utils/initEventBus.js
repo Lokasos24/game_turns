@@ -1,5 +1,5 @@
 import { eventBus } from "./eventBus.js"
-import { selectCharacter } from "../systems/selectCharacter.js"
+import { selectCharacter } from "../systems/characters/selectCharacter.js"
 import { changeDialog } from "../components/dialog/changeDialog.js"
 import { createPanel } from "../components/unitStats/panelStatsMain.js"
 import { changeTurn } from "../systems/turns.js"

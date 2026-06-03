@@ -1,7 +1,7 @@
 import dataFetchs from "../dataFetching/fetch.js"
 import { historyUrls } from "../../constants/globalConsts.js"
 import renderApp from "../../components/renderApp.js"
-import { initCharactersPositions } from "../characters/defineCharactersPositions.js"
+import { initCharactersPositions } from "../../systems/characters/defineCharactersPositions.js"
 import { MODE } from "../../constants/globalConsts.js"
 import { addEnemies } from "../enemies/enemies.js"
 
