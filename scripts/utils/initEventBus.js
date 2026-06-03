@@ -5,10 +5,10 @@ import { createPanel } from "../components/unitStats/panelStatsMain.js"
 import { changeTurn } from "../systems/turns.js"
 import { 
     tryMoveUnit,
-    moveUnit,
+    nodesExplored,
     optimalPath,
-    nodesExplored 
-} from "../systems/movement.js"
+    moveUnit
+} from "../systems/movements/movement.js"
 
 export function initAllEvents() {
     eventBus.on('move:character', tryMoveUnit)

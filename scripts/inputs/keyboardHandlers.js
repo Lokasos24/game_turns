@@ -1,4 +1,4 @@
-import { tryMoveSelector } from "../systems/movement.js"
+import { tryMoveSelector } from "../systems/movements/movement.js"
 import { eventBus } from "../utils/eventBus.js"
 import { MODE } from "../constants/globalConsts.js"
 

@@ -1,9 +1,9 @@
-import { directions } from "../constants/globalConsts.js"
+import { directions } from "../../constants/globalConsts.js"
 import { 
     getNode,
     manhattan,
     reconstructPath
-} from "../utils/helpers.js"
+} from "../../utils/helpers.js"
 
 export function getRecheableNodes(gameState, unit){
     const reachable = []

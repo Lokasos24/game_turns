@@ -1,4 +1,4 @@
-import { captureUnit } from "../services/characters/captureUnit.js"
+import { captureUnit } from "../../services/characters/captureUnit.js"
 import {
     verifyLimitMap,
     verifyNextTileWakable,
@@ -6,9 +6,9 @@ import {
     selectorInRange,
     isPlayerPhase,
     verifyUnitOnTile
-} from "../utils/helpers.js"
+} from "../../utils/helpers.js"
 import { aStar, getRecheableNodes } from "./astar.js"
-import { eventBus } from "../utils/eventBus.js"
+import { eventBus } from "../../utils/eventBus.js"
 
 export function tryMoveSelector(gameState, yPosition, xPosition) {
     if(!isPlayerPhase(gameState)) return
