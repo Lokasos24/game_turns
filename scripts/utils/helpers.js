@@ -28,33 +28,6 @@ export function verifyNextTileWakable({world, selector}){
     return true
 }
 
-export function getNode({map}, x, y){
-    if(y < 0 || y >= map.length) return
-    if(x < 0 || x >= map[y].length) return
-
-    return {
-        ...TILE_DEFS[map[y][x]],
-        x,
-        y
-    }
-}
-
-export function manhattan(x1, x2, y1, y2){
-    return Math.abs(x1 - x2) + Math.abs(y1 - y2)
-}
-
-export function reconstructPath(node){
-    const path = []
-    let current = node
-
-    while(current){
-        path.unshift({x: current.x, y: current.y})
-        current = current.parent
-    }
-
-    return path
-}
-
 export function verifyIsUnitMove({drawX, drawY, moved}, {y, x}){
     return drawX === x && drawY === y || moved
 }
